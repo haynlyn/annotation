@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal 9: Nonfiction Annotation — Channel Architecture and Color Semantics</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 24px;
+            color: #1a1a1a;
+            line-height: 1.7;
+        }
+        h1 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 10px;
+            margin-bottom: 1.2em;
+        }
+        h2 {
+            font-size: 1.15em;
+            margin-top: 2em;
+            margin-bottom: 0.4em;
+        }
+        h3 {
+            font-size: 1em;
+            margin-top: 1.6em;
+            margin-bottom: 0.3em;
+            color: #444;
+            font-style: italic;
+        }
+        blockquote {
+            border-left: 3px solid #aaa;
+            margin: 0 0 1.5em 0;
+            padding: 8px 16px;
+            color: #555;
+            font-style: italic;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0.8em 0 1.4em 0;
+        }
+        th {
+            text-align: left;
+            padding: 6px 12px;
+            border-bottom: 2px solid #ccc;
+            font-size: 0.85em;
+            color: #666;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        td {
+            padding: 7px 12px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+            color: #1a1a1a;
+            font-size: 0.95em;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 2em 0;
+        }
+        p {
+            margin: 0.6em 0 1em 0;
+        }
+
+        /* Channel 1: highlight rows — colored background, black text */
+        tr.hl-green   { background-color: rgba(46,  125, 50,  0.18); }
+        tr.hl-red     { background-color: rgba(198,  40, 40,  0.15); }
+        tr.hl-yellow  { background-color: rgba(255, 210,  0,  0.40); }
+        tr.hl-blue    { background-color: rgba(21,  101, 192, 0.14); }
+        tr.hl-purple  { background-color: rgba(106,  27, 154, 0.13); }
+        tr.hl-orange  { background-color: rgba(230,  81,  0,  0.16); }
+        tr.hl-grey    { background-color: rgba(97,   97,  97, 0.12); }
+        tr.hl-magenta { background-color: rgba(173,  20,  87, 0.13); }
+
+        /* Channel 2: underline rows — colored underline, black text */
+        tr.ul-red td     { text-decoration: underline; text-decoration-color: #c62828; text-decoration-thickness: 2px; }
+        tr.ul-green td   { text-decoration: underline; text-decoration-color: #2e7d32; text-decoration-thickness: 2px; }
+        tr.ul-orange td  { text-decoration: underline; text-decoration-color: #e65100; text-decoration-thickness: 2px; }
+        tr.ul-magenta td { text-decoration: underline; text-decoration-color: #ad1457; text-decoration-thickness: 2px; }
+
+        /* Compound examples — highlight + underline combined */
+        .ex {
+            display: inline;
+            padding: 1px 0;
+            line-height: 1.8;
+        }
+        .ex-red-green {
+            background-color: rgba(198, 40, 40, 0.15);
+            text-decoration: underline;
+            text-decoration-color: #2e7d32;
+            text-decoration-thickness: 2px;
+        }
+        .ex-yellow-orange {
+            background-color: rgba(255, 210, 0, 0.40);
+            text-decoration: underline;
+            text-decoration-color: #e65100;
+            text-decoration-thickness: 2px;
+        }
+        .ex-red-magenta {
+            background-color: rgba(198, 40, 40, 0.15);
+            text-decoration: underline;
+            text-decoration-color: #ad1457;
+            text-decoration-thickness: 2px;
+        }
+        td.example { font-style: italic; font-size: 0.93em; }
+        td.reading  { font-size: 0.9em; color: #444; }
+    </style>
+</head>
+<body>
+
+<h1>Proposal 9: Nonfiction Annotation &mdash; Channel Architecture and Color Semantics</h1>
+
+<blockquote>Designed primarily for <strong>nonfiction</strong> reading. Fiction may warrant a separate or adapted system.</blockquote>
+
+<h2>Core Principle</h2>
+
+<p><strong>Highlights</strong> encode your reaction to the author&rsquo;s content. <strong>Underlines</strong> modify that reaction &mdash; marking dissent, hedging, or action. <strong>Stacked highlights</strong> express compound meaning. The system is readable at a glance: color tells you <em>what</em>, type tells you <em>whose voice</em> and <em>what to do about it</em>.</p>
+
+<hr>
+
+<h2>Core Architecture</h2>
+
+<p>The annotation system operates on two independent channels. Each channel carries distinct meaning; their combination produces compound annotations.</p>
+
+<hr>
+
+<h2>Channel 1: The Primary Channel (Highlights and Boxes)</h2>
+
+<p>Highlights and boxes encode the <strong>nature of the content being marked</strong>. Color answers: <em>what kind of thing is this?</em></p>
+
+<p>This channel is subdivided into three groups:</p>
+
+<h3>Evaluation Colors</h3>
+
+<p>These assign a valence &mdash; good or bad &mdash; to the content.</p>
+
+<table>
+    <tr><th>Color</th><th>Role</th></tr>
+    <tr class="hl-green">
+        <td><strong>Green</strong></td>
+        <td>Positive &mdash; a callout that something is good or beneficial</td>
+    </tr>
+    <tr class="hl-red">
+        <td><strong>Red</strong></td>
+        <td>Negative &mdash; a callout that something is bad or dangerous</td>
+    </tr>
+</table>
+
+<h3>Informational Colors</h3>
+
+<p>These characterize the content without taking a stance.</p>
+
+<table>
+    <tr><th>Color</th><th>Role</th></tr>
+    <tr class="hl-yellow">
+        <td><strong>Yellow</strong></td>
+        <td>Neutral assertion or structural claim &mdash; neither a tip nor a warning</td>
+    </tr>
+    <tr class="hl-blue">
+        <td><strong>Blue</strong></td>
+        <td>Useful or interesting &mdash; worth knowing regardless of opinion</td>
+    </tr>
+    <tr class="hl-purple">
+        <td><strong>Purple</strong></td>
+        <td>Novel or paradigm-shifting &mdash; changes how I think</td>
+    </tr>
+    <tr class="hl-orange">
+        <td><strong>Orange</strong></td>
+        <td>Uncertainty &mdash; I don&rsquo;t follow this, or I&rsquo;m not yet convinced</td>
+    </tr>
+    <tr class="hl-grey">
+        <td><strong>Grey</strong></td>
+        <td>Definition, term, or reference &mdash; lookup-worthy material</td>
+    </tr>
+</table>
+
+<h3>Action Color</h3>
+
+<table>
+    <tr><th>Color</th><th>Role</th></tr>
+    <tr class="hl-magenta">
+        <td><strong>Magenta</strong></td>
+        <td>Directive &mdash; I need to do something</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Channel 2: The Modifier Channel (Underlines)</h2>
+
+<p>Underlines <strong>modify the primary annotation</strong>. They do not stand alone as the primary signal &mdash; they operate on top of a highlight. Color answers: <em>how does my stance differ from or extend the highlight?</em></p>
+
+<p>One underline per passage (they share a layer and are opaque).</p>
+
+<table>
+    <tr><th>Underline Color</th><th>Role</th></tr>
+    <tr class="ul-red">
+        <td><strong>Red</strong></td>
+        <td>Dissent &mdash; I disagree with the highlighted claim</td>
+    </tr>
+    <tr class="ul-green">
+        <td><strong>Green</strong></td>
+        <td>Dissent &mdash; I disagree with the highlighted claim (counter-valence to red base)</td>
+    </tr>
+    <tr class="ul-orange">
+        <td><strong>Orange</strong></td>
+        <td>Hedge &mdash; not as strong as the highlight suggests; soften the reading</td>
+    </tr>
+    <tr class="ul-magenta">
+        <td><strong>Magenta</strong></td>
+        <td>Action &mdash; I need to act on this content</td>
+    </tr>
+</table>
+
+<p>Dissent underlines can apply to <strong>any</strong> highlight color &mdash; evaluation or informational. A red or green underline beneath a yellow, blue, grey, or purple highlight expresses disagreement with a neutral or structural claim.</p>
+
+<hr>
+
+<h2>Channel Interaction</h2>
+
+<p>The two channels are independent but compose. The primary channel describes the content; the modifier channel describes the reader&rsquo;s response or action relative to it. Neither channel is required &mdash; a highlight alone is a complete annotation. An underline alone is not.</p>
+
+<hr>
+
+<h2>Compound Examples</h2>
+
+<p>The following illustrate what combined annotations look like in practice.</p>
+
+<table>
+    <tr><th>Combination</th><th>Example</th><th>Reading</th></tr>
+    <tr>
+        <td>Red highlight<br>+ green underline</td>
+        <td class="example"><span class="ex ex-red-green">Direct manipulation of production data outside a formal release process should never be done.</span></td>
+        <td class="reading">Author flags this as dangerous; I disagree &mdash; it&rsquo;s acceptable under controlled conditions.</td>
+    </tr>
+    <tr>
+        <td>Yellow highlight<br>+ orange underline</td>
+        <td class="example"><span class="ex ex-yellow-orange">Analytical databases are inherently consumer-facing and must adapt to the preferences of business users.</span></td>
+        <td class="reading">Stated as fact; I&rsquo;m not convinced this is necessarily true.</td>
+    </tr>
+    <tr>
+        <td>Red highlight<br>+ magenta underline</td>
+        <td class="example"><span class="ex ex-red-magenta">Embedding credentials directly in source code exposes them to anyone with repository access.</span></td>
+        <td class="reading">This is dangerous &mdash; and I may currently be doing exactly this. Fix immediately.</td>
+    </tr>
+</table>
+
+</body>
+</html>
