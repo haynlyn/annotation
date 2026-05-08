@@ -26,8 +26,8 @@ These assign a valence — good or bad — to the content.
 
 | Color | Role |
 |---|---|
-| $\colorbox{#c8e6c9}{\textbf{Green}}$ | Positive — a callout that something is good or beneficial |
-| $\colorbox{#ffcdd2}{\textbf{Red}}$ | Negative — a callout that something is bad or dangerous |
+| $\textcolor{#2e7d32}{\textbf{Green}}$ | Positive — a callout that something is good or beneficial |
+| $\textcolor{#c62828}{\textbf{Red}}$ | Negative — a callout that something is bad or dangerous |
 
 ### Informational Colors
 
@@ -35,17 +35,17 @@ These characterize the content without taking a stance.
 
 | Color | Role |
 |---|---|
-| $\colorbox{#fff176}{\textbf{Yellow}}$ | Neutral assertion or structural claim — neither a tip nor a warning |
-| $\colorbox{#bbdefb}{\textbf{Blue}}$ | Useful or interesting — worth knowing regardless of opinion |
-| $\colorbox{#e1bee7}{\textbf{Purple}}$ | Novel or paradigm-shifting — changes how I think |
-| $\colorbox{#ffe0b2}{\textbf{Orange}}$ | Uncertainty — I don't follow this, or I'm not yet convinced |
-| $\colorbox{#eeeeee}{\textbf{Grey}}$ | Definition, term, or reference — lookup-worthy material |
+| $\textcolor{#f9a825}{\textbf{Yellow}}$ | Neutral assertion or structural claim — neither a tip nor a warning |
+| $\textcolor{#1565c0}{\textbf{Blue}}$ | Useful or interesting — worth knowing regardless of opinion |
+| $\textcolor{#6a1b9a}{\textbf{Purple}}$ | Novel or paradigm-shifting — changes how I think |
+| $\textcolor{#e65100}{\textbf{Orange}}$ | Uncertainty — I don't follow this, or I'm not yet convinced |
+| $\textcolor{#616161}{\textbf{Grey}}$ | Definition, term, or reference — lookup-worthy material |
 
 ### Action Color
 
 | Color | Role |
 |---|---|
-| $\colorbox{#fce4ec}{\textbf{Magenta}}$ | Directive — I need to do something |
+| $\textcolor{#ad1457}{\textbf{Magenta}}$ | Directive — I need to do something |
 
 ---
 
@@ -78,7 +78,7 @@ The following illustrate what combined annotations look like in practice.
 
 **Red highlight + green underline:**
 
-$$\colorbox{#ffcdd2}{\textcolor{#2e7d32}{\underline{\text{Direct manipulation of production data outside a formal release process should never be done.}}}}$$
+$$\textcolor{#2e7d32}{\underline{\text{Direct manipulation of production data outside a formal release process should never be done.}}}$$
 
 *Author flags this as dangerous; I disagree — it's acceptable under controlled conditions.*
 
@@ -86,7 +86,7 @@ $$\colorbox{#ffcdd2}{\textcolor{#2e7d32}{\underline{\text{Direct manipulation of
 
 **Yellow highlight + orange underline:**
 
-$$\colorbox{#fff176}{\textcolor{#e65100}{\underline{\text{Analytical databases are inherently consumer-facing and must adapt to the preferences of business users.}}}}$$
+$$\textcolor{#e65100}{\underline{\text{Analytical databases are inherently consumer-facing and must adapt to the preferences of business users.}}}$$
 
 *Stated as fact; I'm not convinced this is necessarily true.*
 
@@ -94,6 +94,6 @@ $$\colorbox{#fff176}{\textcolor{#e65100}{\underline{\text{Analytical databases a
 
 **Red highlight + magenta underline:**
 
-$$\colorbox{#ffcdd2}{\textcolor{#ad1457}{\underline{\text{Embedding credentials directly in source code exposes them to anyone with repository access.}}}}$$
+$$\textcolor{#ad1457}{\underline{\text{Embedding credentials directly in source code exposes them to anyone with repository access.}}}$$
 
 *This is dangerous — and I may currently be doing exactly this. Fix immediately.*
