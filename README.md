@@ -21,31 +21,29 @@ Highlights and boxes encode the **nature of the content being marked**. Color an
 This channel is subdivided into three groups:
 
 ### Evaluation Colors
-
 These assign a valence — good or bad — to the content.
 
 | Color | Role |
 |---|---|
-| $\textcolor{#2e7d32}{\textbf{Green}}$ | Positive — a callout that something is good or beneficial |
-| $\textcolor{#c62828}{\textbf{Red}}$ | Negative — a callout that something is bad or dangerous |
+| **Green** | Positive — a callout that something is good or beneficial |
+| **Red** | Negative — a callout that something is bad or dangerous |
 
 ### Informational Colors
-
 These characterize the content without taking a stance.
 
 | Color | Role |
 |---|---|
-| $\textcolor{#f9a825}{\textbf{Yellow}}$ | Neutral assertion or structural claim — neither a tip nor a warning |
-| $\textcolor{#1565c0}{\textbf{Blue}}$ | Useful or interesting — worth knowing regardless of opinion |
-| $\textcolor{#6a1b9a}{\textbf{Purple}}$ | Novel or paradigm-shifting — changes how I think |
-| $\textcolor{#e65100}{\textbf{Orange}}$ | Uncertainty — I don't follow this, or I'm not yet convinced |
-| $\textcolor{#616161}{\textbf{Grey}}$ | Definition, term, or reference — lookup-worthy material |
+| **Yellow** | Neutral assertion or structural claim — neither a tip nor a warning |
+| **Blue** | Useful or interesting — worth knowing regardless of opinion |
+| **Purple** | Novel or paradigm-shifting — changes how I think |
+| **Orange** | Uncertainty — I don't follow this, or I'm not yet convinced |
+| **Grey** | Definition, term, or reference — lookup-worthy material |
 
 ### Action Color
 
 | Color | Role |
 |---|---|
-| $\textcolor{#ad1457}{\textbf{Magenta}}$ | Directive — I need to do something |
+| **Magenta** | Directive — I need to do something |
 
 ---
 
@@ -57,10 +55,10 @@ One underline per passage (they share a layer and are opaque).
 
 | Underline Color | Role |
 |---|---|
-| $\textcolor{#c62828}{\underline{\textbf{Red}}}$ | Dissent — I disagree with the highlighted claim |
-| $\textcolor{#2e7d32}{\underline{\textbf{Green}}}$ | Dissent — I disagree with the highlighted claim (counter-valence to red base) |
-| $\textcolor{#e65100}{\underline{\textbf{Orange}}}$ | Hedge — not as strong as the highlight suggests; soften the reading |
-| $\textcolor{#ad1457}{\underline{\textbf{Magenta}}}$ | Action — I need to act on this content |
+| **Red** | Dissent — I disagree with the highlighted claim |
+| **Green** | Dissent — I disagree with the highlighted claim (counter-valence to red base) |
+| **Orange** | Hedge — not as strong as the highlight suggests; soften the reading |
+| **Magenta** | Action — I need to act on this content |
 
 Dissent underlines can apply to **any** highlight color — evaluation or informational. A red or green underline beneath a yellow, blue, grey, or purple highlight expresses disagreement with a neutral or structural claim.
 
@@ -69,31 +67,3 @@ Dissent underlines can apply to **any** highlight color — evaluation or inform
 ## Channel Interaction
 
 The two channels are independent but compose. The primary channel describes the content; the modifier channel describes the reader's response or action relative to it. Neither channel is required — a highlight alone is a complete annotation. An underline alone is not.
-
----
-
-## Compound Examples
-
-The following illustrate what combined annotations look like in practice.
-
-**Red highlight + green underline:**
-
-$$\textcolor{#2e7d32}{\underline{\text{Direct manipulation of production data outside a formal release process should never be done.}}}$$
-
-*Author flags this as dangerous; I disagree — it's acceptable under controlled conditions.*
-
----
-
-**Yellow highlight + orange underline:**
-
-$$\textcolor{#e65100}{\underline{\text{Analytical databases are inherently consumer-facing and must adapt to the preferences of business users.}}}$$
-
-*Stated as fact; I'm not convinced this is necessarily true.*
-
----
-
-**Red highlight + magenta underline:**
-
-$$\textcolor{#ad1457}{\underline{\text{Embedding credentials directly in source code exposes them to anyone with repository access.}}}$$
-
-*This is dangerous — and I may currently be doing exactly this. Fix immediately.*
